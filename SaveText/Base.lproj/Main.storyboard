@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SaveText" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="テキストを入力" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XBy-lP-JRL">
+                                <rect key="frame" x="67" y="258.5" width="240" height="150"/>
+                                <color key="backgroundColor" red="1" green="0.37912881389999997" blue="0.41844121950000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="DbJ-7I-UOa"/>
+                                    <constraint firstAttribute="height" constant="150" id="WdC-vF-hn4"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="Z1J-3S-uzc"/>
+                                    <constraint firstAttribute="width" constant="240" id="dFP-QM-zey"/>
+                                </constraints>
+                                <inset key="scrollIndicatorInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LL8-xz-hOJ">
+                                <rect key="frame" x="171.5" y="432" width="31" height="30"/>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="saveText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BBJ-Co-tCw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ac5-AE-Fnc">
+                                <rect key="frame" x="171.5" y="487" width="31" height="30"/>
+                                <state key="normal" title="削除"/>
+                                <connections>
+                                    <action selector="deleteText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IGv-8e-lER"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LL8-xz-hOJ" firstAttribute="top" secondItem="XBy-lP-JRL" secondAttribute="bottom" constant="23.5" id="92q-lL-Ewv"/>
+                            <constraint firstItem="LL8-xz-hOJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ItP-WW-XCP"/>
+                            <constraint firstItem="ac5-AE-Fnc" firstAttribute="top" secondItem="LL8-xz-hOJ" secondAttribute="bottom" constant="25" id="LlE-Qy-W7I"/>
+                            <constraint firstItem="XBy-lP-JRL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XeY-eO-8Ia"/>
+                            <constraint firstItem="ac5-AE-Fnc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="coP-Cf-edo"/>
+                            <constraint firstItem="XBy-lP-JRL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vzF-lz-09F"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="XBy-lP-JRL" id="xKi-Ew-91z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
