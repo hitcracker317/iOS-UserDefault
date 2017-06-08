@@ -21,17 +21,15 @@ class ViewController: UIViewController {
         
         
         let ud = UserDefaults.standard
-        //let textValue = ud.string(forKey: "text")
-        
-        //UserDefaultのインスタンス.取り出す値の型(forKey: "キーの文字列")　UserDefalutから値を取り出す
-        //保存された値が存在するかどうかチェック
-        if let textValue = ud.string(forKey: "text") {
-            textView.text = textValue
-        } else {
-            textView.text = "テキストを入力"
+        //let デシリアライズ結果 = NSKeyedUnarchiver.unarchiveObject(with: 対象データ)
+        if let storedData = ud.object(forKey: "text") as? Data {
+            //デシリアライズ処理 - データ型の値を取り出して独自クラスに変換
+            if let unarchiveData = NSKeyedUnarchiver.unarchiveObject(with: storedData) as? TextData {
+                if let textValue = unarchiveData.textviewText {
+                    textView.text = textValue
+                }
+            }
         }
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +41,12 @@ class ViewController: UIViewController {
     @IBAction func saveText(_ sender: Any) {
         //テキストを保存
         let ud = UserDefaults.standard
-        ud.set(textView.text, forKey: "text")
+        
+        //let シリアライズ結果 = NSKeyedArchiver.archivedData(withRootObject: 対象データ)
+        let data = TextData()
+        data.textviewText = textView.text
+        let archiveData = NSKeyedArchiver.archivedData(withRootObject: data) //シリアライズ処理 - 独自クラスをdata型に変換
+        ud.set(archiveData, forKey: "text")
         ud.synchronize()
     }
     
@@ -52,6 +55,9 @@ class ViewController: UIViewController {
         let ud = UserDefaults.standard
         ud.removeObject(forKey: "text")
         textView.text = ""
+        
+        let data = TextData()
+        data.textviewText = ""
     }
 }
 

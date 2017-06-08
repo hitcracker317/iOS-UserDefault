@@ -14,6 +14,7 @@
 		F30571211EE8CDAB00EE6E4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F305711F1EE8CDAB00EE6E4E /* LaunchScreen.storyboard */; };
 		F305712C1EE8CDAB00EE6E4E /* SaveTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F305712B1EE8CDAB00EE6E4E /* SaveTextTests.swift */; };
 		F30571371EE8CDAB00EE6E4E /* SaveTextUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30571361EE8CDAB00EE6E4E /* SaveTextUITests.swift */; };
+		F3FA2A111EE8E62D00A0E172 /* TextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA2A101EE8E62D00A0E172 /* TextData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F30571321EE8CDAB00EE6E4E /* SaveTextUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaveTextUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30571361EE8CDAB00EE6E4E /* SaveTextUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTextUITests.swift; sourceTree = "<group>"; };
 		F30571381EE8CDAB00EE6E4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3FA2A101EE8E62D00A0E172 /* TextData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				F30571161EE8CDAB00EE6E4E /* AppDelegate.swift */,
 				F30571181EE8CDAB00EE6E4E /* ViewController.swift */,
+				F3FA2A101EE8E62D00A0E172 /* TextData.swift */,
 				F305711A1EE8CDAB00EE6E4E /* Main.storyboard */,
 				F305711D1EE8CDAB00EE6E4E /* Assets.xcassets */,
 				F305711F1EE8CDAB00EE6E4E /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				F30571191EE8CDAB00EE6E4E /* ViewController.swift in Sources */,
 				F30571171EE8CDAB00EE6E4E /* AppDelegate.swift in Sources */,
+				F3FA2A111EE8E62D00A0E172 /* TextData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +511,7 @@
 				F305713D1EE8CDAB00EE6E4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F305713E1EE8CDAB00EE6E4E /* Build configuration list for PBXNativeTarget "SaveTextTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				F30571401EE8CDAB00EE6E4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F30571411EE8CDAB00EE6E4E /* Build configuration list for PBXNativeTarget "SaveTextUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				F30571431EE8CDAB00EE6E4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
